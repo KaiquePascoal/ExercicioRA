@@ -13,10 +13,14 @@
 </style>
     </head>
     <body>
-        <a-scene 
-            arjs="patternRatio:0.80" 
-            raycaster="objects: .interactable" 
-            cursor="rayOrigin: mouse; fuse: false">
+        <a-scene
+    vr-mode-ui="enabled: false"
+    renderer="precision: mediump;"
+    arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;"
+    raycaster="objects: .interactable"
+    cursor="rayOrigin: mouse; fuse: false"
+>
+
 
             <a-marker type="pattern" url="https://raw.githubusercontent.com/KaiquePascoal/ExercicioRA/main/marker.patt">
 
@@ -58,6 +62,7 @@
         </script>
     </body>
 </html>
+
 
 
 
