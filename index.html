@@ -7,11 +7,11 @@
     <body>
         <a-scene
             embedded
-            arjs="sourceType: webcam; debugUIEnabled: false;"
+            arjs="patternRatio:0.80"
             raycaster="objects: .interactable"
             cursor="rayOrigin: mouse; fuse: false">
 
-            <a-marker preset="hiro" id="hiroMarker">
+            <a-marker type="pattern" url="https://github.com/KaiquePascoal/ExercicioRA/blob/main/marker.patt">
 
                 <a-image
                     id="logo"
@@ -51,3 +51,4 @@
         </script>
     </body>
 </html>
+
