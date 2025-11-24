@@ -1,19 +1,42 @@
 <!doctype html>
 <html>
-    <head>
-        <script src="https://aframe.io/releases/1.7.1/aframe.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/gh/AR-js-org/AR.js/aframe/build/aframe-ar.js"></script>
-        <style>
-    video.arjs-video {
-        object-fit: contain !important;
-        width: 100% !important;
-        height: 100% !important;
-        transform: scale(1) !important;
-    }
-</style>
-    </head>
-    <body>
-        <a-scene
+<head>
+    <meta name="viewport"
+          content="width=device-width, height=device-height,
+                   initial-scale=1.0, maximum-scale=1.0,
+                   user-scalable=no, shrink-to-fit=no">
+
+    <script src="https://aframe.io/releases/1.7.1/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/AR-js-org/AR.js/aframe/build/aframe-ar.js"></script>
+
+    <style>
+        video,
+        video.arjs-video,
+        #arjs-video,
+        .a-canvas,
+        .a-video {
+            object-fit: cover !important;
+            width: 100vw !important;
+            height: 100vh !important;
+            max-width: 100vw !important;
+            max-height: 100vh !important;
+            transform: none !important;
+        }
+
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            touch-action: none;
+        }
+    </style>
+</head>
+<body>
+
+<a-scene
+    embedded="false"
     vr-mode-ui="enabled: false"
     renderer="precision: mediump;"
     arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;"
@@ -21,47 +44,44 @@
     cursor="rayOrigin: mouse; fuse: false"
 >
 
+    <a-marker type="pattern"
+              url="https://raw.githubusercontent.com/KaiquePascoal/ExercicioRA/main/marker.patt">
 
-            <a-marker type="pattern" url="https://raw.githubusercontent.com/KaiquePascoal/ExercicioRA/main/marker.patt">
+        <a-image id="logo"
+                 class="interactable"
+                 width="1"
+                 height="1"
+                 position="0 0 0"
+                 rotation="90 270 90"
+                 src="https://i.postimg.cc/zXypjMkK/logo.png">
+        </a-image>
 
-                <a-image
-                    id="logo"
-                    class="interactable"
-                    width="1"
-                    height="1"
-                    position="0 0 0"
-                    rotation="90 270 90"
-                    src="https://i.postimg.cc/zXypjMkK/logo.png">
-                </a-image>
+        <a-image id="cartao"
+                 class="interactable"
+                 width="4"
+                 height="3"
+                 position="3 0.3 -1"
+                 rotation="90 270 90"
+                 src="https://i.postimg.cc/GhZNsYyY/FAUSTINO-(2).png">
+        </a-image>
 
-                <a-image
-                    id="cartao"
-                    class="interactable" 
-                    width="4"
-                    height="3"
-                    position="3 0.3 -1"
-                    rotation="90 270 90"
-                    src="https://i.postimg.cc/GhZNsYyY/FAUSTINO-(2).png">
-                </a-image>
+    </a-marker>
 
-            </a-marker>
+    <a-entity camera></a-entity>
+</a-scene>
 
-            <a-entity camera></a-entity>
-        </a-scene>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const cartao = document.querySelector("#cartao");
+    cartao.addEventListener("click", () => {
+        window.location.href = "https://matias.me/nsfw";
+    });
+});
+</script>
 
-        <script>
-            document.addEventListener("DOMContentLoaded", () => {
-
-                const cartao = document.querySelector("#cartao");
-
-                cartao.addEventListener("click", () => {
-                    window.location.href = "https://matias.me/nsfw";
-                });
-
-            });
-        </script>
-    </body>
+</body>
 </html>
+
 
 
 
