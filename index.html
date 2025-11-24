@@ -3,16 +3,21 @@
     <head>
         <script src="https://aframe.io/releases/1.7.1/aframe.min.js"></script>
         <script src="https://cdn.jsdelivr.net/gh/AR-js-org/AR.js/aframe/build/aframe-ar.js"></script>
+        <style>
+    video.arjs-video {
+        object-fit: contain !important;
+        width: 100% !important;
+        height: 100% !important;
+        transform: scale(1) !important;
+    }
+</style>
     </head>
     <body>
-        <a-scene
-    embedded
-    vr-mode-ui="enabled: false"
-    renderer="precision: mediump;"
-    arjs="sourceType: webcam; sourceWidth:1280; sourceHeight:720; displayWidth:1280; displayHeight:720;"
-    raycaster="objects: .interactable"
-    cursor="rayOrigin: mouse; fuse: false"
->
+        <a-scene 
+            embedded
+            arjs="patternRatio:0.80" 
+            raycaster="objects: .interactable" 
+            cursor="rayOrigin: mouse; fuse: false">
 
             <a-marker type="pattern" url="https://raw.githubusercontent.com/KaiquePascoal/ExercicioRA/main/marker.patt">
 
@@ -54,6 +59,7 @@
         </script>
     </body>
 </html>
+
 
 
 
