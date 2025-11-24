@@ -7,10 +7,13 @@
     </head>
     <body>
         <a-scene
-            embedded
-            arjs="patternRatio:0.80"
-            raycaster="objects: .interactable"
-            cursor="fuse: false; rayOrigin: mouse">
+    embedded
+    vr-mode-ui="enabled: false"
+    renderer="precision: mediump;"
+    arjs="sourceType: webcam; sourceWidth:1280; sourceHeight:720; displayWidth:1280; displayHeight:720;"
+    raycaster="objects: .interactable"
+    cursor="rayOrigin: mouse; fuse: false"
+>
 
             <a-marker type="pattern" url="https://raw.githubusercontent.com/KaiquePascoal/ExercicioRA/main/marker.patt">
 
@@ -52,6 +55,7 @@
         </script>
     </body>
 </html>
+
 
 
 
